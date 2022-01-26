@@ -1,14 +1,14 @@
 # Data Preprocessing Tools
 
 ## Importing the libraries
-import numpy as np # allows us to work with arrays
-import matplotlib.pyplot as plt # allows us to plot charts and graphs
-import pandas as pd # allows us to import the data, also create matrix of features and the dependent variable
+import numpy as np # numpy allows us to work with arrays.
+import matplotlib.pyplot as plt #  matplotlib allows us to plot charts and graphs.
+import pandas as pd # pandas allows us to import the data, also create matrix of features and the dependent variable.
 
 ## Importing the dataset
 dataset = pd.read_csv('Data.csv')
-X = dataset.iloc[:, :-1].values # iloc stands for locate indexes, x is our feature(or independent) variable
-y = dataset.iloc[:, -1].values # y is our dependent variable
+X = dataset.iloc[:, :-1].values # iloc stands for locate indexes, x is our feature(or independent) variable.
+y = dataset.iloc[:, -1].values # y is our dependent variable.
 
 print(X)
 """
