@@ -84,6 +84,7 @@ print(y)
 # Training the SVR model on the whole dataset
 from sklearn.svm import SVR
 regressor = SVR(kernel = 'rbf')
+## Radial Basis Kernel(RBF) is a kernel function that is used in machine learning to find a non-linear classifier or regression line.
 regressor.fit(X, y.ravel())
 ## SVR()
 
