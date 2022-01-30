@@ -22,6 +22,17 @@ X_poly = poly_reg.fit_transform(X)
 lin_reg_2 = LinearRegression()
 lin_reg_2.fit(X_poly, y)
 
+"""
+# Predicting the Test set results
+y_pred = regressor.predict(poly_reg.transform(X_test))
+np.set_printoptions(precision=2)
+print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
+# Evaluating the Model Performance
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+"""
+
 # Visualising the Linear Regression results
 plt.scatter(X, y, color = 'red')
 plt.plot(X, lin_reg.predict(X), color = 'blue')
