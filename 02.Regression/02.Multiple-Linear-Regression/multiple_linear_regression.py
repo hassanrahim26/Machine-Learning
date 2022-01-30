@@ -152,6 +152,12 @@ print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test)
  [167921.07 166187.94]]
 """
 
+"""
+# Evaluating the Model Performance
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+"""
+
 # Making a single prediction (for example the profit of a startup with R&D Spend = 160000, Administration Spend = 130000, Marketing Spend = 300000 and State = 'California')
 print(regressor.predict([[1, 0, 0, 160000, 130000, 300000]]))
 ## [181566.92]
