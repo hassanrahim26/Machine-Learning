@@ -21,6 +21,14 @@ regressor.fit(X, y)
 # Predicting a new result
 regressor.predict([[6.5]])
 ## array([150000.])
+"""
+np.set_printoptions(precision=2)
+print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
+# Evaluating the Model Performance
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+"""
 
 ## Decision Tree Regressor model is clearly not the best model to use on a single feature dataset. It's more adapted to dataset with many features, a high dimensional dataset.
 
