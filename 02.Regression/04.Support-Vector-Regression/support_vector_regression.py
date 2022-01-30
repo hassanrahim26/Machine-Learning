@@ -31,6 +31,7 @@ print(y)
 """
 
 y = y.reshape((len(y), 1))
+# We've to reshape our dependent variable vector y because we've to scale it.
 
 print(y)
 """
@@ -44,6 +45,12 @@ print(y)
  [ 300000]
  [ 500000]
  [1000000]]
+"""
+
+"""
+# Splitting the dataset into the Training set and Test set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 """
 
 # Feature Scaling
@@ -91,6 +98,14 @@ regressor.fit(X, y.ravel())
 # Predicting a new result
 sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])).reshape(-1, 1))
 ## array([[170370.0204065]])
+"""
+np.set_printoptions(precision=2)
+print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
+# Evaluating the Model Performance
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+"""
 
 # Visualising the SVR results
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
